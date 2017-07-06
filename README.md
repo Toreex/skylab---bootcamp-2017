@@ -51,6 +51,7 @@ Arrays and Objects (Constructors)
 Global Objects (Object, Function, Array, Number, Boolean, Math and Date)
 
 *Javascript Challenge 1
+"link" mis ejercicios...
 
 
 # Class 3
@@ -106,3 +107,32 @@ Converts an array to a string, and returns the result
 Adds new elements to the beginning of an array, and returns the new length
 -valueOf()
 Returns the primitive value of an array
+
+"link" mis ejercicios...
+
+# Class 4
+
+Regular Expressions.
+
+
+PATTERN         NOTES
+/b[aeiou]t/     Matches "bat", "bet", "bit", "bot" and "but"
+                Also matches "cricket bat", "bitter lemon"
+
+PATTERN         NOTES
+/[0-9a-f]*/     Will match hex
+/[0-9a-zA-Z]/   Upper and lower case are distinct; this matches alphanumeric strings
+/./ The dot '.' matches any character
+/\./            If you actually want to match a dot, escape it
+
+PATTERN         NOTES
+/b[aeiou]+t/    Matches "bat" and "bit" etc, but also "boot" and "boat"
+
+PATTERN         NOTES
+/^b[aeiou]t/    Will match "battering ram" but not "cricket bat"
+
+ *Javascript Challenge 1** Extra
+
+"link" mis ejercicios..
+
+
