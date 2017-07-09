@@ -148,47 +148,47 @@ Functional programming w/ array higher order functions
 
 *Js array methods
 
--concat()  
+-concat()    
 Joins two or more arrays, and returns a copy of the joined arrays
--every()
+-every()    
 Checks if every element in an array pass a test
--fill()
+-fill()    
 Fill the elements in an array with a static value
--filter()
+-filter()    
 Creates a new array with every element in an array that pass a test
--find()
+-find()    
 Returns the value of the first element in an array that pass a test
--forEach()
+-forEach()    
 Calls a function for each array element
--indexOf()
+-indexOf()    
 Search the array for an element and returns its position
--join()
+-join()    
 Joins all elements of an array into a string
--lastIndexOf()
+-lastIndexOf()    
 Search the array for an element, starting at the end, and returns its position
--map()
+-map()    
 Creates a new array with the result of calling a function for each array element
--pop()
+-pop()    
 Removes the last element of an array, and returns that element
--push()
+-push()    
 Adds new elements to the end of an array, and returns the new length
--reduce()
+-reduce()    
 Reduce the values of an array to a single value (going left-to-right)
--reverse()
+-reverse()    
 Reverses the order of the elements in an array
--shift()
+-shift()    
 Removes the first element of an array, and returns that element
--slice()
+-slice()    
 Selects a part of an array, and returns the new array
--some()
+-some()    
 Checks if any of the elements in an array pass a test
--splice()
+-splice()    
 Adds/Removes elements from an array
--toString()
+-toString()    
 Converts an array to a string, and returns the result
--unshift()
+-unshift()    
 Adds new elements to the beginning of an array, and returns the new length
--valueOf()
+-valueOf()    
 Returns the primitive value of an array
 
 
@@ -272,12 +272,12 @@ m: multiline
 
 Methods:
 
-test(): Returns true if it finds something and false if it doesn't
-exec(): Return an array of string that match the pattern
-match(): Return an array of occurrences
-search(): Return the position of the first occurrence
-replace(): Allow us to replace the found string by another string
-split(): Accepts a regular expression to split a string in elements of an array
+test(): Returns true if it finds something and false if it doesn't    
+exec(): Return an array of string that match the pattern    
+match(): Return an array of occurrences    
+search(): Return the position of the first occurrence    
+replace(): Allow us to replace the found string by another string    
+split(): Accepts a regular expression to split a string in elements of an array    
 
 
 function fun() {
@@ -301,8 +301,8 @@ function fun(name) {
  obj.hello
 "hello undefined!"
 
- fun.call(obj, 'Yasmina')
-"hello Yasmina!"
+ fun.call(obj, 'Didac')
+"hello Didac!"
 
  fun ('peter')
  window.hello
