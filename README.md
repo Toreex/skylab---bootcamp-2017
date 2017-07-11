@@ -452,14 +452,14 @@ The HEAD element
 
 
     
-    *The BODY element
+ *The BODY element
 
 !ELEMENT BODY O O (%block;|SCRIPT)+ +(INS|DEL) -- document body -->
 !ATTLIST BODY
   %attrs;                              -- %coreattrs, %i18n, %events --
   onload          %Script;   #IMPLIED  -- the document has been loaded --
   onunload        %Script;   #IMPLIED  -- the document has been removed --
-  >
+
 
 
 
@@ -569,6 +569,7 @@ e.g., <XYZ KEY=VALUE> would be called an "XYZ-tag."
 Most tags come in pairs: an opening tag, and a closing tag, which has the same name preceded by a "/".
 The text between the two tags is affected by them.
 The tags we have discussed are:
+
 <HTML> First tag in a document (unpaired).
 <HEAD> Marks the head section (paired).
 <BODY> Marks the body section (paired).
@@ -602,28 +603,27 @@ There’s a fifth sectioning element in HTML5, but it’s not new, it’s the <b
 HTML5 offers new elements for better document structure:
 
 Tag Description
-<article>   Defines an article in a document
-<aside> Defines content aside from the page content
-<bdi>   Isolates a part of text that might be formatted in a different direction from other text outside it
-<details>   Defines additional details that the user can view or hide
-<dialog>    Defines a dialog box or window
-<figcaption>    Defines a caption for a <figure> element
-<figure>    Defines self-contained content
-<footer>    Defines a footer for a document or section
-<header>    Defines a header for a document or section
-<main>  Defines the main content of a document
-<mark>  Defines marked/highlighted text
-<menuitem>  Defines a command/menu item that the user can invoke from a popup menu
-<meter> Defines a scalar measurement within a known range (a gauge)
-<nav>   Defines navigation links
-<progress>  Represents the progress of a task
-<rp>    Defines what to show in browsers that do not support ruby annotations
-<rt>    Defines an explanation/pronunciation of characters (for East Asian typography)
-<ruby>  Defines a ruby annotation (for East Asian typography)
-<section>   Defines a section in a document
-<summary>   Defines a visible heading for a <details> element
-<time>  Defines a date/time
-<wbr>   Defines a possible line-break
+Defines an article in a document
+Defines content aside from the page content
+Isolates a part of text that might be formatted in a different direction from other text outside it
+Defines additional details that the user can view or hide
+Defines a dialog box or window
+Defines a caption for a element
+Defines self-contained content
+Defines a footer for a document or section
+Defines a header for a document or section
+ Defines the main content of a document
+ Defines marked/highlighted text
+men Defines a command/menu item that the user can invoke from a popup menuDefines a scalar measurement within a known range (a gauge)
+Defines navigation links
+pro Represents the progress of a task
+Defines what to show in browsers that do not support ruby annotations
+Defines an explanation/pronunciation of characters (for East Asian typography)
+Defines a ruby annotation (for East Asian typography)
+Defines a section in a document
+summDefines a visible heading for aelement
+Defines a date/time
+ Defines a possible line-break
 
 html5-form-validation
 http://www.the-art-of-web.com/html/html5-form-validation/
