@@ -709,17 +709,17 @@ li:last-child {...}
 div:only-child {...}
 
 
-<ul>
-  <li>This list item will be selected</li>
-  <li>
-    <div>This div will be selected</div>
-  </li>
-  <li>
-    <div>...</div>
-    <div>...</div>
-  </li>
-  <li>This list item will be selected</li>
-</ul>
+ul>
+  li>This list item will be selected</li>
+  li>
+    div>This div will be selected</div>
+  /li>
+  li>
+    div>...</div>
+    div>...</div>
+  /li>
+  li>This list item will be selected</li>
+/ul>
 
 :first-of-type, :last-of-type, & :only-of-type
 
@@ -728,28 +728,28 @@ p:last-of-type {...}
 img:only-of-type {...}
 
 
-<article>
-  <h1>...</h1>
-  <p>This paragraph will be selected</p>
-  <p>...</p>
-  <img src="#"><!-- This image will be selected -->
-  <p>This paragraph will be selected</p>
-  <h6>...</h6>
-</article>
+article>
+  h1>...</h1>
+  p>This paragraph will be selected</p>
+  p>...</p>
+  img src="#"><!-- This image will be selected -->
+  p>This paragraph will be selected</p>
+  h6>...</h6>
+/article>
 
 
 *:nth-child(n) & :nth-last-child(n)
 
 li:nth-child(3n) {...}
 
-<ul>
-  <li>...</li>
-  <li>...</li>
-  <li>This list item will be selected</li>
-  <li>...</li>
-  <li>...</li>
-  <li>This list item will be selected</li>
-</ul>
+ul>
+  li>...</li>
+  li>...</li>
+  li>This list item will be selected</li>
+  li>...</li>
+  li>...</li>
+  li>This list item will be selected</li>
+/ul>
 
 *:nth-of-type(n) & :nth-last-of-type(n)
 
@@ -762,7 +762,7 @@ The :target pseudo-class is used to style elements when an element’s ID attrib
 section:target {...}
 
 
-<section id="hello">...</section>
+section id="hello">...</section>
 
 web  complet selectors: http://learn.shayhowe.com/advanced-html-css/complex-selectors/
 
