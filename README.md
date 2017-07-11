@@ -385,6 +385,467 @@ function SafeBox(thing) {
 
 # Class 5
 
+arr = [1,2,3,4,5];
+
+Math.max(...arr);
+
+Return arr // seria 5;
 
 
 
+# Class 6
+
+
+- HTML5 -
+https://www.w3.org/TR/html401/struct/global.html
+
+Clear Ideas
+
+The Three Layers of Web Design
+CSS Zen Garden (layer separation example)
+Structure of an HTML document [1] [2]
+Review of basic HTML tags [1]
+
+demo web - http://www.csszengarden.com/
+
+- SEO -
+
+Search engine optimization  
+
+Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine's unpaid results—often referred to as "natural", "organic", or "earned" results. In general, the earlier (or higher ranked on the search results page), and more frequently a site appears in the search results list, the more visitors it will receive from the search engine's users; these visitors can then be converted into customers.[1] SEO may target different kinds of search, including image search, video search, academic search,[2] news search, and industry-specific vertical search engines. SEO differs from local search engine optimization in that the latter is focused on optimizing a business' online presence so that its web pages will be displayed by search engines when a user enters a local search for its products or services. The former instead is more focused on national searches.
+
+HTML basic Body
+
+Here's an example of a simple HTML document:
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+   </HEAD>
+   <BODY>
+      <P>Hello world!
+   </BODY>
+</HTML>
+
+
+The HEAD element
+
+!-- %head.misc; defined earlier on as "SCRIPT|STYLE|META|LINK|OBJECT" -->
+!ENTITY % head.content "TITLE & BASE?">
+!ELEMENT HEAD O O (%head.content;) +(%head.misc;) -- document head -->
+!ATTLIST HEAD
+  %i18n;                               -- lang, dir --
+  profile     %URI;          #IMPLIED  -- named dictionary of meta info --
+  >
+
+
+  The TITLE element
+
+    !-- The TITLE element is not considered part of the flow of text.
+       It should be displayed, for example as the page header or
+       window title. Exactly one title is required per document.
+    -->
+    !ELEMENT TITLE - - (#PCDATA) -(%head.misc;) -- document title -->
+    !ATTLIST TITLE %i18n>
+
+
+    
+    *The BODY element
+
+!ELEMENT BODY O O (%block;|SCRIPT)+ +(INS|DEL) -- document body -->
+!ATTLIST BODY
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  onload          %Script;   #IMPLIED  -- the document has been loaded --
+  onunload        %Script;   #IMPLIED  -- the document has been removed --
+  >
+
+
+
+ 
+ Using external (linked) style sheets gives you the flexibility to change the presentation without revising the source HTML document:
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+ <TITLE>A study of population dynamics</TITLE>
+ <LINK rel="stylesheet" type="text/css" href="smartstyle.css">
+</HEAD>
+<BODY>
+  ... document body...
+</BODY>
+</HTML>
+
+ Element identifiers: the id and class attributes.
+
+ Attribute definitions
+
+id = name [CS]
+This attribute assigns a name to an element. This name must be unique in a document.
+class = cdata-list [CS]
+This attribute assigns a class name or set of class names to an element. Any number of elements may be assigned the same class name or names. Multiple class names must be separated by white space characters.
+The id attribute assigns a unique identifier to an element (which may be verified by an SGML parser). For example, the following paragraphs are distinguished by their id values:
+<P id="myparagraph"> This is a uniquely named paragraph.</P>
+<P id="yourparagraph"> This is also a uniquely named paragraph.</P>
+The id attribute has several roles in HTML:
+
+As a style sheet selector.
+As a target anchor for hypertext links.
+As a means to reference a particular element from a script.
+As the name of a declared OBJECT element.
+For general purpose processing by user agents (e.g. for identifying fields when extracting data from HTML pages into a database, translating HTML documents into other formats, etc.).
+The class attribute, on the other hand, assigns one or more class names to an element; the element may be said to belong to these classes. A class name may be shared by several element instances. The class attribute has several roles in HTML:
+
+As a style sheet selector (when an author wishes to assign style information to a set of elements).
+For general purpose processing by user agents.
+In the following example, the SPAN element is used in conjunction with the id and class attributes to markup document messages. Messages appear in both English and French versions.
+
+<!-- English messages -->
+<P><SPAN id="msg1" class="info" lang="en">Variable declared twice</SPAN>
+<P><SPAN id="msg2" class="warning" lang="en">Undeclared variable</SPAN>
+<P><SPAN id="msg3" class="error" lang="en">Bad syntax for variable name</SPAN>
+<!-- French messages -->
+<P><SPAN id="msg1" class="info" lang="fr">Variable d&eacute;clar&eacute;e deux fois</SPAN>
+<P><SPAN id="msg2" class="warning" lang="fr">Variable ind&eacute;finie</SPAN>
+<P><SPAN id="msg3" class="error" lang="fr">Erreur de syntaxe pour variable</SPAN>
+
+
+Block-level and inline elements
+
+Certain HTML elements that may appear in BODY are said to be "block-level" while others are "inline" (also known as "text level"). The distinction is founded on several notions:
+
+Grouping elements: the DIV and SPAN elements
+
+!ELEMENT DIV - - (%flow;)*            -- generic language/style container -->
+!ATTLIST DIV
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  
+!ELEMENT SPAN - - (%inline;)*         -- generic language/style container -->
+!ATTLIST SPAN
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  
+
+*Start tag: required, End tag: required
+
+Attributes defined elsewhere
+
+id, class (document-wide identifiers)
+lang (language information), dir (text direction)
+title (element title)
+style (inline style information)
+align (alignment)
+onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events)
+
+Headings: The H1, H2, H3, H4, H5, H6 elements
+
+!ENTITY % heading "H1|H2|H3|H4|H5|H6">
+!--
+  There are six levels of headings from H1 (the most important)
+  to H6 (the least important).
+-->
+
+!ELEMENT (%heading;)  - - (%inline;)* -- heading -->
+!ATTLIST (%heading;)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+
+
+Basic tags. HTML
+
+https://www.lehigh.edu/~inwww/old_seminar/tagreview.html
+
+The fundamental points:
+
+Web documents are ordinary text files (ASCII) that:
+Contain tags, which are used to "mark-up" text.
+Are named with a ".html" extension.
+Are placed in a "www-data" directory within AFS public space.
+Tags are just text with a special format:
+Each individual tag begins with the character "<"
+Each individual tag ends with the character ">"
+A tag may contain keywords, the first of which is the name of the tag. 
+e.g., <XYZ KEY=VALUE> would be called an "XYZ-tag."
+Most tags come in pairs: an opening tag, and a closing tag, which has the same name preceded by a "/".
+The text between the two tags is affected by them.
+The tags we have discussed are:
+<HTML> First tag in a document (unpaired).
+<HEAD> Marks the head section (paired).
+<BODY> Marks the body section (paired).
+<TITLE> Title (goes in head section) (paired).
+<P> Paragraph break (unpaired).
+<BR> Line break (unpaired).
+<HR> Horizontal rule (line) (unpaired).
+<PRE> Preformatted text (paired).
+<EM> Emphasis (usually italics) (paired).
+<STRONG> Stronger emphasis (paired).
+<B> Bold (text attribute) (paired).
+<I> Italics (text attribute) (paired).
+<H1> Level 1 (e.g., document) heading (paired).
+<H2> Level 2 (e.g., part) heading (paired).
+<H3> Level 3 (e.g., chapter) heading (paired).
+<H4> Level 4 (e.g., section) heading (paired).
+<H5> Level 5 (e.g., subsection) heading (paired).
+<H6> Level 6 (e.g., paragraph) heading (paired).
+
+
+Document Outline in HTML5
+
+In HTML5 the outlining algorithm has been enhanced by new sectioning elements, namely:
+
+<section></section> for sections grouped around a specific theme
+<article></article> for complete or self-contained compositions such as a blog post or a widget
+<nav></nav> for navigation blocks
+<aside></aside> for complementary content such as sidebars.
+There’s a fifth sectioning element in HTML5, but it’s not new, it’s the <body></body> tag. The <header></header> and <footer></footer> tags are also new, but they don’t generate new sections in a document, they divide up the content inside sections. 
+
+HTML5 offers new elements for better document structure:
+
+Tag Description
+<article>   Defines an article in a document
+<aside> Defines content aside from the page content
+<bdi>   Isolates a part of text that might be formatted in a different direction from other text outside it
+<details>   Defines additional details that the user can view or hide
+<dialog>    Defines a dialog box or window
+<figcaption>    Defines a caption for a <figure> element
+<figure>    Defines self-contained content
+<footer>    Defines a footer for a document or section
+<header>    Defines a header for a document or section
+<main>  Defines the main content of a document
+<mark>  Defines marked/highlighted text
+<menuitem>  Defines a command/menu item that the user can invoke from a popup menu
+<meter> Defines a scalar measurement within a known range (a gauge)
+<nav>   Defines navigation links
+<progress>  Represents the progress of a task
+<rp>    Defines what to show in browsers that do not support ruby annotations
+<rt>    Defines an explanation/pronunciation of characters (for East Asian typography)
+<ruby>  Defines a ruby annotation (for East Asian typography)
+<section>   Defines a section in a document
+<summary>   Defines a visible heading for a <details> element
+<time>  Defines a date/time
+<wbr>   Defines a possible line-break
+
+html5-form-validation
+http://www.the-art-of-web.com/html/html5-form-validation/
+
+
+# Class 7
+
+CSS3 Basics & Selectors
+
+class, id,..
+
+Example Classification  Explanation
+h1 --> Type Selector Selects an element by it’s type
+.tagline --> Class Selector  Selects an element by the class attribute value, which may be reused multiple times per page
+#intro --> ID Selector Selects an element by the ID attribute value, which is unique and to only be used once per page
+
+
+Child Selectors Overview
+
+Example Classification  Explanation
+article h2 --> Descendant Selector Selects an element that resides anywhere within an identified ancestor element
+article > p --> Direct Child Selector Selects an element that resides immediately inside an identified parent element
+
+Sibling Selectors Overview
+
+Example Classification  Explanation
+h2 ~ p --> General Sibling Selector  Selects an element that follows anywhere after the prior element, in which both elements share the same parent
+h2 + p --> Adjacent Sibling Selector Selects an element that follows directly after the prior element, in which both elements share the same parent
+
+Attribute Selectors Overview
+
+Example Classification  Explanation
+a[target] Attribute Present Selector  Selects an element if the given attribute is present
+
+a[href="http://google.com/"]  Attribute Equals Selector Selects an element if the given attribute value exactly matches the value stated
+a[href*="login"]  Attribute Contains Selector Selects an element if the given attribute value contains at least once instance of the value stated
+
+a[href^="https://"] Attribute Begins With Selector  Selects an element if the given attribute value begins with the value stated
+
+a[href$=".pdf"] Attribute Ends With Selector  Selects an element if the given attribute value ends with the value stated
+
+a[rel~="tag"] Attribute Spaced Selector Selects an element if the given attribute value is whitespace-separated with one word being exactly as stated
+
+a[lang|="en"] Attribute Hyphenated Selector Selects an element if the given attribute value is hyphen-separated and begins with the word stated
+
+*Pseudo-classes
+
+Pseudo-classes are similar to regular classes in HTML however they are not directly stated within the markup, instead they are a dynamically populated as a result of users actions or the document structure. The most common pseudo-class, and one you’ve likely seen before, is :hover. Notice how this pseudo-class begins with the colon character, :, as will all other pseudo-classes.
+
+a:link {...}
+a:visited {...}
+
+*User Action Pseudo-classes
+
+a:hover {...}
+a:active {...}
+a:focus {...}
+
+
+*User Interface State Pseudo-classes
+
+input:enabled {...}
+input:disabled {...}
+
+input:checked {...}
+input:indeterminate {...}
+
+
+*Structural & Position Pseudo-classes
+
+A handful of pseudo-classes are structural and position based, in which they are determined based off where elements reside in the document tree. These structural and position based pseudo-classes come in a few different shapes and sizes, each of which provides their own unique function. Some pseudo-classes have been around longer than others, however CSS3 brought way of an entire new set of pseudo-classes to supplement the existing ones.
+
+:first-child, :last-child, & :only-child
+
+The first structural and position based pseudo-classes one is likely to come across are the :first-child, :last-child, and :only-child pseudo-classes. The :first-child pseudo-class will select an element if it’s the first child within its parent, while the :last-child pseudo-class will select an element if it’s the last element within its parent. These pseudo-classes are prefect for selecting the first or last items in a list and so forth. Additionally, the :only-child will select an element if it is the only element within a parent. Alternately, the :only-child pseudo-class could be written as :first-child:last-child, however :only-child holds a lower specificity.
+
+Here the selector li:first-child identifies the first list item within a list, while the selector li:last-child identifies the last list item within a list, thus lines 2 and 10 are selected. The selector div:only-child is looking for a division which is the single child of a parent element, without any other other siblings. In this case line 4 is selected as it is the only division within the specific list item.
+
+CSS
+
+li:first-child {...}
+li:last-child {...}
+div:only-child {...}
+
+
+<ul>
+  <li>This list item will be selected</li>
+  <li>
+    <div>This div will be selected</div>
+  </li>
+  <li>
+    <div>...</div>
+    <div>...</div>
+  </li>
+  <li>This list item will be selected</li>
+</ul>
+
+:first-of-type, :last-of-type, & :only-of-type
+
+p:first-of-type {...}
+p:last-of-type {...}
+img:only-of-type {...}
+
+
+<article>
+  <h1>...</h1>
+  <p>This paragraph will be selected</p>
+  <p>...</p>
+  <img src="#"><!-- This image will be selected -->
+  <p>This paragraph will be selected</p>
+  <h6>...</h6>
+</article>
+
+
+*:nth-child(n) & :nth-last-child(n)
+
+li:nth-child(3n) {...}
+
+<ul>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+</ul>
+
+*:nth-of-type(n) & :nth-last-of-type(n)
+
+p:nth-of-type(3n) {...}
+
+*Target Pseudo-class
+
+The :target pseudo-class is used to style elements when an element’s ID attribute value matches that of the URI fragment identifier. The fragment identifier within a URI can be recognized by the hash character, #, and what directly follows it. The URL http://example.com/index.html#hello includes the fragment identifier of hello. When this identifier matches the ID attribute value of an element on the page, <section id="hello"> for example, that element may be identified and stylized using the :target pseudo-class. Fragment identifiers are most commonly seen when using on page links, or linking to another part of the same page.
+
+section:target {...}
+
+
+<section id="hello">...</section>
+
+web  complet selectors: http://learn.shayhowe.com/advanced-html-css/complex-selectors/
+
+
+Absolute length units
+
+px
+Relative to the viewing device.
+For screen display, typically one device pixel (dot) of the display.
+For printers and very high resolution screens one CSS pixel implies multiple device pixels, so that the number of pixel per inch stays around 96.
+
+mm
+One millimeter
+
+q
+A quarter of a millimeter (1/40th of a centimeter).
+
+cm
+One centimeter (10 millimeters).
+
+in
+One inch (2.54 centimeters).
+
+pt
+One point (1/72nd of an inch).
+
+pc
+One pica (12 points).
+
+
+Relative length units
+
+em
+Represents the calculated font-size of the element. If used on the font-size property itself, it represents the inherited font-size of the element.
+
+ex
+Represents the x-height of the element's font. On fonts with the 'x' letter, this is generally the height of lowercase letters in the font; 1ex ≈ 0.5em in many fonts.
+
+cap
+Represents the "cap height" (nominal height of capital letters) of the element’s font
+
+ch
+Represents the width, or more precisely the advance measure, of the glyph '0' (zero, the Unicode character U+0030) in the element's font.
+
+
+*CSS3 Positioning
+
+The Box Model [1]
+width, height, padding, margin, border
+box-sizing: border-box;
+
+CSS3 box-sizing Property
+Definition and Usage
+The box-sizing property is used to tell the browser what the sizing properties (width and height) should include.
+
+Relative Positioning
+
+The relative value for the position property allows elements to appear within the normal flow a page, leaving space for an element as intended while not allowing other elements to flow around it; however, it also allows an element’s display position to be modified with the box offset properties. For example, consider the following HTML and CSS:
+
+static, 
+relative.
+fixed,
+absolute, 
+z index,
+
+Centering in CSS: A Complete Guide
+
+https://css-tricks.com/centering-css-complete-guide/
+
+Flexbox
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+flex-direction: row | row-reverse | column | column-reverse;
+
+ flex-wrap: nowrap | wrap | wrap-reverse;
+
+ *MediaQuery
+
+ Media Queries is a module of CSS that defines expressions allowing to tailor presentations to a specific range of output devices without changing the content itself.
+
+ ReferenceEDIT
+At-rules
+
+@import
+@media
