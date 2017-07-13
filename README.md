@@ -849,3 +849,266 @@ At-rules
 
 @import
 @media
+
+
+*Class 8
+
+CSS3 Effects & Animation
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+This is the method with the deepest support possible right now. The @font-face rule should be added to the stylesheet before any styles.
+
+Then use it to style elements like this:
+
+body {
+  font-family: 'MyWebFont', Fallback, sans-serif;
+}
+
+
+Alternative Techniques
+
+While @font-face is excellent for fonts that are hosted on our own servers, there may be situations where a hosted font solution is better. Google Fonts offers this as a way to use their fonts. The following is an example of using @import to load the Open Sans font from Google Fonts:
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+Then we can use it to style elements:
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+<link>ing a stylesheet
+Similarly, you could link to the same asset as you would any other CSS filter, in the <head> of the HTML document rather than in the CSS. Using the same example from Google Fonts, this is what we would use:
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+Then, we can style our elements like the other methods:
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+*text-overflow
+
+The text-overflow property in CSS deals with situations where text is clipped when it overflows the element's box. It can be clipped (i.e. cut off, hidden), display an ellipsis ('…', Unicode Range Value U+2026) or display an author-defined string (no current browser support for author-defined strings).
+
+.ellipsis {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.clip { text-overflow: clip; }
+This is an example text showing nothing interesting but the truncated content via text-overflow shorthand property.
+
+.ellipsis { text-overflow: ellipsis; }
+This is an example text showing nothing interesting but the truncated content via text-overflow shorthand property.
+
+.word { text-overflow: ellipsis-word; }
+This is an example text showing nothing interesting but the truncated content via text-overflow shorthand property.
+
+.text { text-overflow: "---"; }
+This is an example text showing nothing interesting but the truncated content via text-overflow shorthand property.
+
+.double { text-overflow: ellipsis ellipsis; text-align: center; }
+This is an example text showing no
+
+.. ejemplo: https://css-tricks.com/almanac/properties/t/text-overflow/
+
+word-break
+
+The word-break CSS property specifies whether or not the browser should insert line breaks wherever the text would otherwise overflow its content box. In contrast to overflow-wrap, word-break will create a break at the exact place where text would otherwise overflow its container (even if putting an entire word on its own line would negate the need for a break).
+
+1. word-break: normal
+
+This is a long and Supercalifragilisticexpialidocious sentence. 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉
+
+2. word-break: break-all
+
+This is a long and Supercalifragilisticexpialidocious sentence. 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉
+
+3. word-break: keep-all
+
+This is a long and Supercalifragilisticexpialidocious sentence. 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉
+
+ejemplo: https://developer.mozilla.org/es/docs/Web/CSS/word-break
+
+box-shadow
+
+ejemplo: https://css-tricks.com/almanac/properties/b/box-shadow/
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+
+The horizontal offset (required) of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+
+The vertical offset (required) of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+
+The blur radius (required), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be, and the further out the shadow will extend. For instance a shadow with 5px of horizontal offset that also has a 5px blur radius will be 10px of total shadow.
+
+The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+
+Color (required) - takes any color value, like hex, named, rgba or hsla. If the color value is omitted, box shadows are drawn in the foreground color (text color). But be aware, older WebKit browsers (pre Chrome 20 and Safari 6) ignore the rule when color is omitted.
+
+
+border-radius
+
+#example-one {
+  border-radius: 10px;
+  background: #BADA55;
+}
+#example-two {
+  border-radius: 10px;
+  border: 3px solid #BADA55;
+}
+
+ejemplo: https://css-tricks.com/almanac/properties/b/border-radius/
+
+*Opacity 
+
+Definition and Usage
+The opacity property sets the opacity level for an element.
+
+The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+ejemplos: https://www.w3schools.com/cssref/css3_pr_opacity.asp
+
+*filter
+
+
+Using just CSS you are able to create all these effects on images.
+
+Greyscale
+Blur
+Saturate
+Sepia
+Hue Rotate
+Invert
+Brightness
+Contrast
+Opacity
+
+How To Use Filters
+To use a filter in CSS it's as easy as using any other CSS property.
+img
+{
+     filter: type(value);
+}
+Like most of new features in CSS3 you need to use browser prefixes.
+img
+{
+     filter: type(value);
+     -webkit-filter: type(value);
+     -moz-filter: type(value);
+     -ms-filter: type(value);
+     -o-filter: type(value);
+}
+
+and more.
+
+ejemplos: https://paulund.co.uk/css-filter
+
+
+*Transformations 
+
+Transform Syntax
+The actual syntax for the transform property is quite simple, including the transform property followed by the value. The value specifies the transform type followed by a specific amount inside parentheses.
+
+div {
+  -webkit-transform: scale(1.5);
+     -moz-transform: scale(1.5);
+       -o-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.box-1 {
+  transform: rotate(20deg);
+}
+.box-2 {
+  transform: rotate(-55deg);
+}
+
+
+etc.. 
+ejemplos: http://learn.shayhowe.com/advanced-html-css/css-transforms/#transform-syntax
+
+
+*Transitions & Animations
+
+As mentioned, for a transition to take place, an element must have a change in state, and different styles must be identified for each state. The easiest way for determining styles for different states is by using the :hover, :focus, :active, and :target pseudo-classes
+
+.box {
+  background: #2db34a;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.box:hover {
+  background: #ff7b29;
+}
+
+Animations Keyframes
+
+To set multiple points at which an element should undergo a transition, use the @keyframes rule. The @keyframes rule includes the animation name, any animation breakpoints, and the properties intended to be animated.
+
+ejemplo: http://learn.shayhowe.com/advanced-html-css/transitions-animations/
+
+
+*Class 9
+
+WHY IS BOOTSTRAP IMPORTANT?
+
+As mentioned above, Bootstrap is so amazing because it has been created as mobile-first. As Caitlin points to,
+
+“With the number of people browsing the internet on their phone or tablet increasing steadily, it’s important to optimize websites for both the desktop and mobile browsing experience.”
+
+Bootstrap embodies the present and future of the web: the ability to work seamlessly on both large desktop monitors and small mobile screens.
+
+*Understanding the Bootstrap 3 Grid System
+
+Bootstrap 2
+
+The grid you create works on desktops and then stacks on top of each other when browser size is below 767px. This is limited since you can only define 1 grid on desktop sized browsers. You are left with a stacked grid on mobile devices.
+
+Bootstrap 3
+
+The new Bootstrap grid system applies to mobile first. When you declare a specific grid size, that is the grid for that size and above. This can be a little hard to grasp at first so here's an example.
+
+For example, let's say you want a site that has:
+
+1 column on extra small devices
+2 columns on small AND medium devices
+4 columns on large devices
+
+.col-xs-$ Extra Small Phones Less than 768px
+.col-sm-$ Small Devices Tablets 768px and Up
+.col-md-$ Medium Devices  Desktops 992px and Up
+.col-lg-$ Large Devices Large Desktops 1200px and Up
+
+Example: Fluid container
+Turn any fixed-width grid layout into a full-width layout by changing your outermost .container to .container-fluid
+
+
+Offsetting columns
+Move columns to the right using .col-md-offset-* classes. These classes increase the left margin of a column by * columns. For example, .col-md-offset-4 moves .col-md-4 over four columns.
+
+ejemplos: http://getbootstrap.com/css/#grid-options
+
+
+
