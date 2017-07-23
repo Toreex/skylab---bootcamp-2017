@@ -1111,4 +1111,146 @@ Move columns to the right using .col-md-offset-* classes. These classes increase
 ejemplos: http://getbootstrap.com/css/#grid-options
 
 
+*Class 10
+
+SASS
+
+http://sass-lang.com/
+
+scss syntax
+
+
+*Class 11
+
+The Browser Environment (BOM y DOM)
+
+BOM
+
+https://github.com/juanmaguitar/javascript-notes/tree/master/markdown-en/11-browser-environment/BOM
+
+DOM
+
+https://github.com/juanmaguitar/javascript-notes/tree/master/markdown-en/11-browser-environment/DOM
+
+Every node can have children-nodes:
+hasChildNodes() : This methos will return true if the node has children-nodes
+childNodes: Return an array of all the children-nodes of an element.
+Because of being an array we can figure out the number of children-nodes with childNodes.length
+parentNode: Return us the father-node of a children-node
+
+>>> document.documentElement.hasChildNodes()
+True
+>>> document.documentElement.childNodes.length
+2
+>>> document.documentElement.childNodes[0]
+<head>
+>>> document.documentElement.childNodes[1]
+<body>
+>>> document.documentElement.childNodes[1].parentNode
+<html>
+>>> var bd = document.documentElement.childNodes[1];
+>>> bd.childNodes.length
+9
+
+We can check the existance of attributes and accesing to their attributes:
+hasAttributes(): Return true if the element has attributes
+getAttribute(): Return the content of an attribute
+
+>>> bd.childNodes[1]
+<p class="opener">
+>>> bd.childNodes[1].hasAttributes()
+True
+>>> bd.childNodes[1].attributes.length
+1
+>>> bd.childNodes[1].attributes[0].nodeName
+"class"
+>>> bd.childNodes[1].attributes[0].nodeValue
+"opener"
+>>> bd.childNodes[1].attributes['class'].nodeValue
+"opener"
+>>> bd.childNodes[1].getAttribute('class')
+"opener"
+
+Advanced selection of elements
+
+http://mootools.net/slickspeed/
+http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+http://www.quirksmode.org/css/contents.html
+
+document.images : document.getElementsByTagName(‘img’)
+
+rows y cells : Once we have a tableelement we can access its rows, and from the rows we can access their cells with this selectors
+
+ >>> oTable = document.getElementsByTagName(‘table’)[0];
+ >>> aRows = oTable.rows;ñ
+ >>> oFirstRow = aRows[0];
+ >>> oLastRow = aRows[oRows.length-1];
+ >>> aCells = oFirstRow.cells;
+ >>> oFirstCell = aCells[0];
+ >>> oLastCell = aCells[aCells.length-1];
+
+ options: From a select we can access the array of its options
+ >>> document.getElementsByTagName('select')[0].options;
+ [option.windows, option.movil, option.aplicaciones-web, option.mac,
+ option.linux, option.palm, option.pocketpc, option.blog]
+querySelector y querySelectorAll: Return DOM elments from a CSS selection
+querySelector() return the first element found
+querySelectorAll() return an array of elements
+
+http://javascript.nwbox.com/NWMatcher/release/test/css3-compat/
+
+ oMyElem = document.querySelector("#myid");
+ aMyHiddenElems = document.body.querySelectorAll(".hidden");
+
+
+ jQuery 
+
+ $() or jQuery(): with jQuery we have a powerful tool for selecting elements
+
+ jQuery Selectting elements.
+
+http://learn.jquery.com/using-jquery-core/selecting-elements/
+
+Manipulating Elements
+
+http://learn.jquery.com/using-jquery-core/manipulating-elements/
+
+.html() – Get or set the HTML contents.
+.text() – Get or set the text contents; HTML will be stripped.
+.attr() – Get or set the value of the provided attribute.
+.width() – Get or set the width in pixels of the first element in the selection as an integer.
+.height() – Get or set the height in pixels of the first element in the selection as an integer.
+.position() – Get an object with position information for the first element in the selection, relative to its first positioned ancestor. This is a getter only.
+.val() – Get or set the value of form elements.
+
+Manipulating Attributes
+
+jQuery's attribute manipulation capabilities are extensive. Basic changes are simple, but the .attr() method also allows for more complex manipulations. It can either set an explicit value, or set a value using the return value of a function. When the function syntax is used, the function receives two arguments: the zero-based index of the element whose attribute is being changed, and the current value of the attribute being changed.
+
+
+* Class 14
+
+Angular js.
+
+ Presentacion: (vista)
+ArtistVeiew...
+
+ Business: (servicios)
+SpotiService...{...}
+
+
+ Data: (datos)
+ Api spotify...
+
+ $scope, --> modelo
+ controllers ---> controlador
+Templates --> vista
+
+Routing --> una pagina web para todo.
+
+api calls :
+$http llama a api
+
+services: 
+$http recipe --- > vuelve la llamada.
 
